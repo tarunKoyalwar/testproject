@@ -27,9 +27,6 @@
 							"fullDescription": {
 								"text": "Full Description of Vulnerability with references"
 							},
-							"messageStrings": {
-								"text": "Rule MessageString"
-							},
 							"properties": {
 								"Severity Rating": "10",
 								"payload": "'sleep(10)--"
@@ -44,10 +41,7 @@
 					"rule": {
 						"id": "template1",
 						"toolComponent": {
-							"name": "SQL Injection in xxx",
-							"shortDescription": {
-								"text": "Rule MessageString"
-							}
+							"name": "SQL Injection in xxx"
 						}
 					},
 					"level": "error",
