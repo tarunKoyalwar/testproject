@@ -70,7 +70,7 @@
 									"fullyQualifiedName": "Name of Address"
 								},
 								"artifactLocation": {
-									"uri": "projectdiscovery.com/api/user=admin'",
+									"uri": "//projectdiscovery.com/api/user=admin'",
 									"description": {
 										"text": "file://projectdiscovery.com/api/user=admin'"
 									}
