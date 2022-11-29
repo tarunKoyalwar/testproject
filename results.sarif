@@ -25,23 +25,20 @@
 								"text": "More details at\nhttps://github.com/projectdiscovery/nuclei-templates/blob/master/technologies/tech-detect.yaml\n"
 							},
 							"properties": {
-								"security-severity": "10",
+								"security-severity": "1",
 								"tags": [
 									"security"
 								]
 							}
 						},
 						{
-							"id": "waf-detect",
-							"name": "WAF Detection",
-							"shortDescription": {
-								"text": "A web application firewall was detected."
-							},
+							"id": "tech-detect",
+							"name": "Wappalyzer Technology Detection",
 							"fullDescription": {
-								"text": "More details at\nhttps://github.com/projectdiscovery/nuclei-templates/blob/master/technologies/waf-detect.yaml\n"
+								"text": "More details at\nhttps://github.com/projectdiscovery/nuclei-templates/blob/master/technologies/tech-detect.yaml\n"
 							},
 							"properties": {
-								"security-severity": "10",
+								"security-severity": "1",
 								"tags": [
 									"security"
 								]
@@ -54,20 +51,20 @@
 								"text": "More details at\nhttps://github.com/projectdiscovery/nuclei-templates/blob/master/miscellaneous/robots-txt-endpoint.yaml\n"
 							},
 							"properties": {
-								"security-severity": "10",
+								"security-severity": "1",
 								"tags": [
 									"security"
 								]
 							}
 						},
 						{
-							"id": "exposed-gitignore",
-							"name": "Exposed Gitignore",
+							"id": "robots-txt-endpoint",
+							"name": "robots.txt endpoint prober",
 							"fullDescription": {
-								"text": "More details at\nhttps://github.com/projectdiscovery/nuclei-templates/blob/master/exposures/configs/exposed-gitignore.yaml\n"
+								"text": "More details at\nhttps://github.com/projectdiscovery/nuclei-templates/blob/master/miscellaneous/robots-txt-endpoint.yaml\n"
 							},
 							"properties": {
-								"security-severity": "10",
+								"security-severity": "1",
 								"tags": [
 									"security"
 								]
@@ -83,7 +80,81 @@
 								"text": "More details at\nhttps://github.com/projectdiscovery/nuclei-templates/blob/master/exposures/files/readme-md.yaml\n"
 							},
 							"properties": {
-								"security-severity": "10",
+								"security-severity": "1",
+								"tags": [
+									"security"
+								]
+							}
+						},
+						{
+							"id": "readme-md",
+							"name": "README.md file disclosure",
+							"shortDescription": {
+								"text": "Internal documentation file often used in projects which can contain sensitive information."
+							},
+							"fullDescription": {
+								"text": "More details at\nhttps://github.com/projectdiscovery/nuclei-templates/blob/master/exposures/files/readme-md.yaml\n"
+							},
+							"properties": {
+								"security-severity": "1",
+								"tags": [
+									"security"
+								]
+							}
+						},
+						{
+							"id": "exposed-gitignore",
+							"name": "Exposed Gitignore",
+							"fullDescription": {
+								"text": "More details at\nhttps://github.com/projectdiscovery/nuclei-templates/blob/master/exposures/configs/exposed-gitignore.yaml\n"
+							},
+							"properties": {
+								"security-severity": "1",
+								"tags": [
+									"security"
+								]
+							}
+						},
+						{
+							"id": "exposed-gitignore",
+							"name": "Exposed Gitignore",
+							"fullDescription": {
+								"text": "More details at\nhttps://github.com/projectdiscovery/nuclei-templates/blob/master/exposures/configs/exposed-gitignore.yaml\n"
+							},
+							"properties": {
+								"security-severity": "1",
+								"tags": [
+									"security"
+								]
+							}
+						},
+						{
+							"id": "waf-detect",
+							"name": "WAF Detection",
+							"shortDescription": {
+								"text": "A web application firewall was detected."
+							},
+							"fullDescription": {
+								"text": "More details at\nhttps://github.com/projectdiscovery/nuclei-templates/blob/master/technologies/waf-detect.yaml\n"
+							},
+							"properties": {
+								"security-severity": "1",
+								"tags": [
+									"security"
+								]
+							}
+						},
+						{
+							"id": "waf-detect",
+							"name": "WAF Detection",
+							"shortDescription": {
+								"text": "A web application firewall was detected."
+							},
+							"fullDescription": {
+								"text": "More details at\nhttps://github.com/projectdiscovery/nuclei-templates/blob/master/technologies/waf-detect.yaml\n"
+							},
+							"properties": {
+								"security-severity": "1",
 								"tags": [
 									"security"
 								]
@@ -106,24 +177,22 @@
 					},
 					"analysisTarget": {},
 					"webRequest": {
-						"target": "http://localhost:80/",
 						"body": {}
 					},
 					"webResponse": {
-						"version": "xxx",
 						"body": {}
 					},
 					"locations": [
 						{
 							"message": {
-								"text": "http://localhost:80/"
+								"text": "http:/192.168.29.188:80"
 							},
 							"physicalLocation": {
 								"address": {},
 								"artifactLocation": {
 									"uri": "/",
 									"description": {
-										"text": "http:/localhost:80"
+										"text": "http:/192.168.29.188:80"
 									}
 								}
 							}
@@ -131,30 +200,28 @@
 					]
 				},
 				{
-					"ruleId": "waf-detect",
+					"ruleId": "tech-detect",
 					"ruleIndex": 1,
 					"rule": {
-						"id": "waf-detect",
+						"id": "tech-detect",
 						"toolComponent": {}
 					},
 					"level": "none",
 					"kind": "open",
 					"message": {
-						"text": "[Nuclei:info] WAF Detection"
+						"text": "[Nuclei:info] Wappalyzer Technology Detection"
 					},
 					"analysisTarget": {},
 					"webRequest": {
-						"target": "http://localhost:80/",
 						"body": {}
 					},
 					"webResponse": {
-						"version": "xxx",
 						"body": {}
 					},
 					"locations": [
 						{
 							"message": {
-								"text": "http://localhost:80/"
+								"text": "http:/localhost:80"
 							},
 							"physicalLocation": {
 								"address": {},
@@ -182,24 +249,22 @@
 					},
 					"analysisTarget": {},
 					"webRequest": {
-						"target": "http://localhost:80/",
 						"body": {}
 					},
 					"webResponse": {
-						"version": "xxx",
 						"body": {}
 					},
 					"locations": [
 						{
 							"message": {
-								"text": "http://localhost:80/"
+								"text": "http:/192.168.29.188:80"
 							},
 							"physicalLocation": {
 								"address": {},
 								"artifactLocation": {
 									"uri": "/",
 									"description": {
-										"text": "http:/localhost:80"
+										"text": "http:/192.168.29.188:80"
 									}
 								}
 							}
@@ -207,30 +272,28 @@
 					]
 				},
 				{
-					"ruleId": "exposed-gitignore",
+					"ruleId": "robots-txt-endpoint",
 					"ruleIndex": 3,
 					"rule": {
-						"id": "exposed-gitignore",
+						"id": "robots-txt-endpoint",
 						"toolComponent": {}
 					},
 					"level": "none",
 					"kind": "open",
 					"message": {
-						"text": "[Nuclei:info] Exposed Gitignore"
+						"text": "[Nuclei:info] robots.txt endpoint prober"
 					},
 					"analysisTarget": {},
 					"webRequest": {
-						"target": "http://localhost:80/",
 						"body": {}
 					},
 					"webResponse": {
-						"version": "xxx",
 						"body": {}
 					},
 					"locations": [
 						{
 							"message": {
-								"text": "http://localhost:80/"
+								"text": "http:/localhost:80"
 							},
 							"physicalLocation": {
 								"address": {},
@@ -258,17 +321,195 @@
 					},
 					"analysisTarget": {},
 					"webRequest": {
-						"target": "http://localhost:80/",
 						"body": {}
 					},
 					"webResponse": {
-						"version": "xxx",
 						"body": {}
 					},
 					"locations": [
 						{
 							"message": {
-								"text": "http://localhost:80/"
+								"text": "http:/192.168.29.188:80"
+							},
+							"physicalLocation": {
+								"address": {},
+								"artifactLocation": {
+									"uri": "/",
+									"description": {
+										"text": "http:/192.168.29.188:80"
+									}
+								}
+							}
+						}
+					]
+				},
+				{
+					"ruleId": "readme-md",
+					"ruleIndex": 5,
+					"rule": {
+						"id": "readme-md",
+						"toolComponent": {}
+					},
+					"level": "none",
+					"kind": "open",
+					"message": {
+						"text": "[Nuclei:info] README.md file disclosure"
+					},
+					"analysisTarget": {},
+					"webRequest": {
+						"body": {}
+					},
+					"webResponse": {
+						"body": {}
+					},
+					"locations": [
+						{
+							"message": {
+								"text": "http:/localhost:80"
+							},
+							"physicalLocation": {
+								"address": {},
+								"artifactLocation": {
+									"uri": "/",
+									"description": {
+										"text": "http:/localhost:80"
+									}
+								}
+							}
+						}
+					]
+				},
+				{
+					"ruleId": "exposed-gitignore",
+					"ruleIndex": 6,
+					"rule": {
+						"id": "exposed-gitignore",
+						"toolComponent": {}
+					},
+					"level": "none",
+					"kind": "open",
+					"message": {
+						"text": "[Nuclei:info] Exposed Gitignore"
+					},
+					"analysisTarget": {},
+					"webRequest": {
+						"body": {}
+					},
+					"webResponse": {
+						"body": {}
+					},
+					"locations": [
+						{
+							"message": {
+								"text": "http:/localhost:80"
+							},
+							"physicalLocation": {
+								"address": {},
+								"artifactLocation": {
+									"uri": "/",
+									"description": {
+										"text": "http:/localhost:80"
+									}
+								}
+							}
+						}
+					]
+				},
+				{
+					"ruleId": "exposed-gitignore",
+					"ruleIndex": 7,
+					"rule": {
+						"id": "exposed-gitignore",
+						"toolComponent": {}
+					},
+					"level": "none",
+					"kind": "open",
+					"message": {
+						"text": "[Nuclei:info] Exposed Gitignore"
+					},
+					"analysisTarget": {},
+					"webRequest": {
+						"body": {}
+					},
+					"webResponse": {
+						"body": {}
+					},
+					"locations": [
+						{
+							"message": {
+								"text": "http:/192.168.29.188:80"
+							},
+							"physicalLocation": {
+								"address": {},
+								"artifactLocation": {
+									"uri": "/",
+									"description": {
+										"text": "http:/192.168.29.188:80"
+									}
+								}
+							}
+						}
+					]
+				},
+				{
+					"ruleId": "waf-detect",
+					"ruleIndex": 8,
+					"rule": {
+						"id": "waf-detect",
+						"toolComponent": {}
+					},
+					"level": "none",
+					"kind": "open",
+					"message": {
+						"text": "[Nuclei:info] WAF Detection"
+					},
+					"analysisTarget": {},
+					"webRequest": {
+						"body": {}
+					},
+					"webResponse": {
+						"body": {}
+					},
+					"locations": [
+						{
+							"message": {
+								"text": "http:/192.168.29.188:80"
+							},
+							"physicalLocation": {
+								"address": {},
+								"artifactLocation": {
+									"uri": "/",
+									"description": {
+										"text": "http:/192.168.29.188:80"
+									}
+								}
+							}
+						}
+					]
+				},
+				{
+					"ruleId": "waf-detect",
+					"ruleIndex": 9,
+					"rule": {
+						"id": "waf-detect",
+						"toolComponent": {}
+					},
+					"level": "none",
+					"kind": "open",
+					"message": {
+						"text": "[Nuclei:info] WAF Detection"
+					},
+					"analysisTarget": {},
+					"webRequest": {
+						"body": {}
+					},
+					"webResponse": {
+						"body": {}
+					},
+					"locations": [
+						{
+							"message": {
+								"text": "http:/localhost:80"
 							},
 							"physicalLocation": {
 								"address": {},
@@ -285,18 +526,18 @@
 			],
 			"invocations": [
 				{
-					"commandLine": "/var/folders/fs/50l_djns0db4w30ttbd6czgr0000gn/T/go-build1889345059/b001/exe/nuclei",
+					"commandLine": "/var/folders/fs/50l_djns0db4w30ttbd6czgr0000gn/T/go-build3680909992/b001/exe/nuclei",
 					"arguments": [
-						"-u",
-						"http://localhost:80/",
+						"-l",
+						"urls.txt",
 						"-s",
 						"info",
 						"-se",
-						"reported.sarif"
+						"reported2.sarif"
 					],
 					"responseFiles": [
 						{
-							"uri": "file:///reported.sarif",
+							"uri": "file:///reported2.sarif",
 							"description": {
 								"text": "Nuclei Sarif Report"
 							}
