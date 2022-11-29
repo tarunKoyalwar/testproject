@@ -32,68 +32,10 @@
 							}
 						},
 						{
-							"id": "tech-detect",
-							"name": "Wappalyzer Technology Detection",
-							"fullDescription": {
-								"text": "More details at\nhttps://github.com/projectdiscovery/nuclei-templates/blob/master/technologies/tech-detect.yaml\n"
-							},
-							"properties": {
-								"security-severity": "1",
-								"tags": [
-									"security"
-								]
-							}
-						},
-						{
 							"id": "robots-txt-endpoint",
 							"name": "robots.txt endpoint prober",
 							"fullDescription": {
 								"text": "More details at\nhttps://github.com/projectdiscovery/nuclei-templates/blob/master/miscellaneous/robots-txt-endpoint.yaml\n"
-							},
-							"properties": {
-								"security-severity": "1",
-								"tags": [
-									"security"
-								]
-							}
-						},
-						{
-							"id": "robots-txt-endpoint",
-							"name": "robots.txt endpoint prober",
-							"fullDescription": {
-								"text": "More details at\nhttps://github.com/projectdiscovery/nuclei-templates/blob/master/miscellaneous/robots-txt-endpoint.yaml\n"
-							},
-							"properties": {
-								"security-severity": "1",
-								"tags": [
-									"security"
-								]
-							}
-						},
-						{
-							"id": "readme-md",
-							"name": "README.md file disclosure",
-							"shortDescription": {
-								"text": "Internal documentation file often used in projects which can contain sensitive information."
-							},
-							"fullDescription": {
-								"text": "More details at\nhttps://github.com/projectdiscovery/nuclei-templates/blob/master/exposures/files/readme-md.yaml\n"
-							},
-							"properties": {
-								"security-severity": "1",
-								"tags": [
-									"security"
-								]
-							}
-						},
-						{
-							"id": "readme-md",
-							"name": "README.md file disclosure",
-							"shortDescription": {
-								"text": "Internal documentation file often used in projects which can contain sensitive information."
-							},
-							"fullDescription": {
-								"text": "More details at\nhttps://github.com/projectdiscovery/nuclei-templates/blob/master/exposures/files/readme-md.yaml\n"
 							},
 							"properties": {
 								"security-severity": "1",
@@ -116,26 +58,13 @@
 							}
 						},
 						{
-							"id": "exposed-gitignore",
-							"name": "Exposed Gitignore",
-							"fullDescription": {
-								"text": "More details at\nhttps://github.com/projectdiscovery/nuclei-templates/blob/master/exposures/configs/exposed-gitignore.yaml\n"
-							},
-							"properties": {
-								"security-severity": "1",
-								"tags": [
-									"security"
-								]
-							}
-						},
-						{
-							"id": "waf-detect",
-							"name": "WAF Detection",
+							"id": "readme-md",
+							"name": "README.md file disclosure",
 							"shortDescription": {
-								"text": "A web application firewall was detected."
+								"text": "Internal documentation file often used in projects which can contain sensitive information."
 							},
 							"fullDescription": {
-								"text": "More details at\nhttps://github.com/projectdiscovery/nuclei-templates/blob/master/technologies/waf-detect.yaml\n"
+								"text": "More details at\nhttps://github.com/projectdiscovery/nuclei-templates/blob/master/exposures/files/readme-md.yaml\n"
 							},
 							"properties": {
 								"security-severity": "1",
@@ -166,6 +95,7 @@
 			"results": [
 				{
 					"ruleId": "tech-detect",
+					"ruleIndex": -1,
 					"rule": {
 						"id": "tech-detect",
 						"toolComponent": {}
@@ -201,7 +131,7 @@
 				},
 				{
 					"ruleId": "tech-detect",
-					"ruleIndex": 1,
+					"ruleIndex": -1,
 					"rule": {
 						"id": "tech-detect",
 						"toolComponent": {}
@@ -237,7 +167,6 @@
 				},
 				{
 					"ruleId": "robots-txt-endpoint",
-					"ruleIndex": 2,
 					"rule": {
 						"id": "robots-txt-endpoint",
 						"toolComponent": {}
@@ -257,14 +186,14 @@
 					"locations": [
 						{
 							"message": {
-								"text": "http:/192.168.29.188:80"
+								"text": "http:/localhost:80"
 							},
 							"physicalLocation": {
 								"address": {},
 								"artifactLocation": {
 									"uri": "/",
 									"description": {
-										"text": "http:/192.168.29.188:80"
+										"text": "http:/localhost:80"
 									}
 								}
 							}
@@ -273,7 +202,6 @@
 				},
 				{
 					"ruleId": "robots-txt-endpoint",
-					"ruleIndex": 3,
 					"rule": {
 						"id": "robots-txt-endpoint",
 						"toolComponent": {}
@@ -293,42 +221,6 @@
 					"locations": [
 						{
 							"message": {
-								"text": "http:/localhost:80"
-							},
-							"physicalLocation": {
-								"address": {},
-								"artifactLocation": {
-									"uri": "/",
-									"description": {
-										"text": "http:/localhost:80"
-									}
-								}
-							}
-						}
-					]
-				},
-				{
-					"ruleId": "readme-md",
-					"ruleIndex": 4,
-					"rule": {
-						"id": "readme-md",
-						"toolComponent": {}
-					},
-					"level": "none",
-					"kind": "open",
-					"message": {
-						"text": "[Nuclei:info] README.md file disclosure"
-					},
-					"analysisTarget": {},
-					"webRequest": {
-						"body": {}
-					},
-					"webResponse": {
-						"body": {}
-					},
-					"locations": [
-						{
-							"message": {
 								"text": "http:/192.168.29.188:80"
 							},
 							"physicalLocation": {
@@ -344,44 +236,8 @@
 					]
 				},
 				{
-					"ruleId": "readme-md",
-					"ruleIndex": 5,
-					"rule": {
-						"id": "readme-md",
-						"toolComponent": {}
-					},
-					"level": "none",
-					"kind": "open",
-					"message": {
-						"text": "[Nuclei:info] README.md file disclosure"
-					},
-					"analysisTarget": {},
-					"webRequest": {
-						"body": {}
-					},
-					"webResponse": {
-						"body": {}
-					},
-					"locations": [
-						{
-							"message": {
-								"text": "http:/localhost:80"
-							},
-							"physicalLocation": {
-								"address": {},
-								"artifactLocation": {
-									"uri": "/",
-									"description": {
-										"text": "http:/localhost:80"
-									}
-								}
-							}
-						}
-					]
-				},
-				{
 					"ruleId": "exposed-gitignore",
-					"ruleIndex": 6,
+					"ruleIndex": 1,
 					"rule": {
 						"id": "exposed-gitignore",
 						"toolComponent": {}
@@ -417,7 +273,7 @@
 				},
 				{
 					"ruleId": "exposed-gitignore",
-					"ruleIndex": 7,
+					"ruleIndex": 1,
 					"rule": {
 						"id": "exposed-gitignore",
 						"toolComponent": {}
@@ -452,16 +308,16 @@
 					]
 				},
 				{
-					"ruleId": "waf-detect",
-					"ruleIndex": 8,
+					"ruleId": "readme-md",
+					"ruleIndex": 2,
 					"rule": {
-						"id": "waf-detect",
+						"id": "readme-md",
 						"toolComponent": {}
 					},
 					"level": "none",
 					"kind": "open",
 					"message": {
-						"text": "[Nuclei:info] WAF Detection"
+						"text": "[Nuclei:info] README.md file disclosure"
 					},
 					"analysisTarget": {},
 					"webRequest": {
@@ -488,8 +344,44 @@
 					]
 				},
 				{
+					"ruleId": "readme-md",
+					"ruleIndex": 2,
+					"rule": {
+						"id": "readme-md",
+						"toolComponent": {}
+					},
+					"level": "none",
+					"kind": "open",
+					"message": {
+						"text": "[Nuclei:info] README.md file disclosure"
+					},
+					"analysisTarget": {},
+					"webRequest": {
+						"body": {}
+					},
+					"webResponse": {
+						"body": {}
+					},
+					"locations": [
+						{
+							"message": {
+								"text": "http:/localhost:80"
+							},
+							"physicalLocation": {
+								"address": {},
+								"artifactLocation": {
+									"uri": "/",
+									"description": {
+										"text": "http:/localhost:80"
+									}
+								}
+							}
+						}
+					]
+				},
+				{
 					"ruleId": "waf-detect",
-					"ruleIndex": 9,
+					"ruleIndex": 3,
 					"rule": {
 						"id": "waf-detect",
 						"toolComponent": {}
@@ -517,6 +409,42 @@
 									"uri": "/",
 									"description": {
 										"text": "http:/localhost:80"
+									}
+								}
+							}
+						}
+					]
+				},
+				{
+					"ruleId": "waf-detect",
+					"ruleIndex": 3,
+					"rule": {
+						"id": "waf-detect",
+						"toolComponent": {}
+					},
+					"level": "none",
+					"kind": "open",
+					"message": {
+						"text": "[Nuclei:info] WAF Detection"
+					},
+					"analysisTarget": {},
+					"webRequest": {
+						"body": {}
+					},
+					"webResponse": {
+						"body": {}
+					},
+					"locations": [
+						{
+							"message": {
+								"text": "http:/192.168.29.188:80"
+							},
+							"physicalLocation": {
+								"address": {},
+								"artifactLocation": {
+									"uri": "/",
+									"description": {
+										"text": "http:/192.168.29.188:80"
 									}
 								}
 							}
@@ -526,18 +454,18 @@
 			],
 			"invocations": [
 				{
-					"commandLine": "/var/folders/fs/50l_djns0db4w30ttbd6czgr0000gn/T/go-build3680909992/b001/exe/nuclei",
+					"commandLine": "/var/folders/fs/50l_djns0db4w30ttbd6czgr0000gn/T/go-build3368883278/b001/exe/nuclei",
 					"arguments": [
 						"-l",
 						"urls.txt",
 						"-s",
 						"info",
 						"-se",
-						"reported2.sarif"
+						"reported3.sarif"
 					],
 					"responseFiles": [
 						{
-							"uri": "file:///reported2.sarif",
+							"uri": "file:///reported3.sarif",
 							"description": {
 								"text": "Nuclei Sarif Report"
 							}
