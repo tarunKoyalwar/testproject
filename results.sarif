@@ -19,10 +19,68 @@
 					"downloadUri": "https://github.com/projectdiscovery/nuclei/releases",
 					"rules": [
 						{
-							"id": "dvwa-headless-automatic-login",
-							"name": "DVWA Headless Automatic Login",
+							"id": "tech-detect",
+							"name": "Wappalyzer Technology Detection",
 							"fullDescription": {
-								"text": "More details at\nhttps://github.com/projectdiscovery/nuclei-templates/blob/master/headless/dvwa-headless-automatic-login.yaml\n"
+								"text": "More details at\nhttps://github.com/projectdiscovery/nuclei-templates/blob/master/technologies/tech-detect.yaml\n"
+							},
+							"properties": {
+								"security-severity": "10",
+								"tags": [
+									"security"
+								]
+							}
+						},
+						{
+							"id": "waf-detect",
+							"name": "WAF Detection",
+							"shortDescription": {
+								"text": "A web application firewall was detected."
+							},
+							"fullDescription": {
+								"text": "More details at\nhttps://github.com/projectdiscovery/nuclei-templates/blob/master/technologies/waf-detect.yaml\n"
+							},
+							"properties": {
+								"security-severity": "10",
+								"tags": [
+									"security"
+								]
+							}
+						},
+						{
+							"id": "robots-txt-endpoint",
+							"name": "robots.txt endpoint prober",
+							"fullDescription": {
+								"text": "More details at\nhttps://github.com/projectdiscovery/nuclei-templates/blob/master/miscellaneous/robots-txt-endpoint.yaml\n"
+							},
+							"properties": {
+								"security-severity": "10",
+								"tags": [
+									"security"
+								]
+							}
+						},
+						{
+							"id": "exposed-gitignore",
+							"name": "Exposed Gitignore",
+							"fullDescription": {
+								"text": "More details at\nhttps://github.com/projectdiscovery/nuclei-templates/blob/master/exposures/configs/exposed-gitignore.yaml\n"
+							},
+							"properties": {
+								"security-severity": "10",
+								"tags": [
+									"security"
+								]
+							}
+						},
+						{
+							"id": "readme-md",
+							"name": "README.md file disclosure",
+							"shortDescription": {
+								"text": "Internal documentation file often used in projects which can contain sensitive information."
+							},
+							"fullDescription": {
+								"text": "More details at\nhttps://github.com/projectdiscovery/nuclei-templates/blob/master/exposures/files/readme-md.yaml\n"
 							},
 							"properties": {
 								"security-severity": "10",
@@ -36,15 +94,167 @@
 			},
 			"results": [
 				{
-					"ruleId": "dvwa-headless-automatic-login",
+					"ruleId": "tech-detect",
 					"rule": {
-						"id": "dvwa-headless-automatic-login",
+						"id": "tech-detect",
 						"toolComponent": {}
 					},
-					"level": "error",
+					"level": "none",
 					"kind": "open",
 					"message": {
-						"text": "[Nuclei:high] DVWA Headless Automatic Login"
+						"text": "[Nuclei:info] Wappalyzer Technology Detection"
+					},
+					"analysisTarget": {},
+					"webRequest": {
+						"target": "http://localhost:80/",
+						"body": {}
+					},
+					"webResponse": {
+						"version": "xxx",
+						"body": {}
+					},
+					"locations": [
+						{
+							"message": {
+								"text": "http://localhost:80/"
+							},
+							"physicalLocation": {
+								"address": {},
+								"artifactLocation": {
+									"uri": "/",
+									"description": {
+										"text": "http:/localhost:80"
+									}
+								}
+							}
+						}
+					]
+				},
+				{
+					"ruleId": "waf-detect",
+					"ruleIndex": 1,
+					"rule": {
+						"id": "waf-detect",
+						"toolComponent": {}
+					},
+					"level": "none",
+					"kind": "open",
+					"message": {
+						"text": "[Nuclei:info] WAF Detection"
+					},
+					"analysisTarget": {},
+					"webRequest": {
+						"target": "http://localhost:80/",
+						"body": {}
+					},
+					"webResponse": {
+						"version": "xxx",
+						"body": {}
+					},
+					"locations": [
+						{
+							"message": {
+								"text": "http://localhost:80/"
+							},
+							"physicalLocation": {
+								"address": {},
+								"artifactLocation": {
+									"uri": "/",
+									"description": {
+										"text": "http:/localhost:80"
+									}
+								}
+							}
+						}
+					]
+				},
+				{
+					"ruleId": "robots-txt-endpoint",
+					"ruleIndex": 2,
+					"rule": {
+						"id": "robots-txt-endpoint",
+						"toolComponent": {}
+					},
+					"level": "none",
+					"kind": "open",
+					"message": {
+						"text": "[Nuclei:info] robots.txt endpoint prober"
+					},
+					"analysisTarget": {},
+					"webRequest": {
+						"target": "http://localhost:80/",
+						"body": {}
+					},
+					"webResponse": {
+						"version": "xxx",
+						"body": {}
+					},
+					"locations": [
+						{
+							"message": {
+								"text": "http://localhost:80/"
+							},
+							"physicalLocation": {
+								"address": {},
+								"artifactLocation": {
+									"uri": "/",
+									"description": {
+										"text": "http:/localhost:80"
+									}
+								}
+							}
+						}
+					]
+				},
+				{
+					"ruleId": "exposed-gitignore",
+					"ruleIndex": 3,
+					"rule": {
+						"id": "exposed-gitignore",
+						"toolComponent": {}
+					},
+					"level": "none",
+					"kind": "open",
+					"message": {
+						"text": "[Nuclei:info] Exposed Gitignore"
+					},
+					"analysisTarget": {},
+					"webRequest": {
+						"target": "http://localhost:80/",
+						"body": {}
+					},
+					"webResponse": {
+						"version": "xxx",
+						"body": {}
+					},
+					"locations": [
+						{
+							"message": {
+								"text": "http://localhost:80/"
+							},
+							"physicalLocation": {
+								"address": {},
+								"artifactLocation": {
+									"uri": "/",
+									"description": {
+										"text": "http:/localhost:80"
+									}
+								}
+							}
+						}
+					]
+				},
+				{
+					"ruleId": "readme-md",
+					"ruleIndex": 4,
+					"rule": {
+						"id": "readme-md",
+						"toolComponent": {}
+					},
+					"level": "none",
+					"kind": "open",
+					"message": {
+						"text": "[Nuclei:info] README.md file disclosure"
 					},
 					"analysisTarget": {},
 					"webRequest": {
@@ -75,20 +285,18 @@
 			],
 			"invocations": [
 				{
-					"commandLine": "/var/folders/fs/50l_djns0db4w30ttbd6czgr0000gn/T/go-build3458385618/b001/exe/nuclei",
+					"commandLine": "/var/folders/fs/50l_djns0db4w30ttbd6czgr0000gn/T/go-build1889345059/b001/exe/nuclei",
 					"arguments": [
 						"-u",
 						"http://localhost:80/",
-						"-t",
-						"/Users/tarun/nuclei-templates/headless/dvwa-headless-automatic-login.yaml",
+						"-s",
+						"info",
 						"-se",
-						"test1.sarif",
-						"-headless",
-						"-v"
+						"reported.sarif"
 					],
 					"responseFiles": [
 						{
-							"uri": "file:///test1.sarif",
+							"uri": "file:///reported.sarif",
 							"description": {
 								"text": "Nuclei Sarif Report"
 							}
