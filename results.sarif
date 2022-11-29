@@ -1,79 +1,58 @@
 {
 	"version": "2.1.0",
-	"$schema": "file://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+	"$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
 	"runs": [
 		{
 			"tool": {
 				"driver": {
-					"name": "vulnscanner",
+					"name": "Nuclei",
 					"organization": "ProjectDiscovery",
-					"product": "Scanners",
+					"product": "Nuclei",
 					"shortDescription": {
-						"text": "Vulnerability Scanner"
+						"text": "Fast and Customizable Vulnerability Scanner"
 					},
 					"fullDescription": {
-						"text": "Template Based Vulnerability Scanner"
+						"text": "Fast and customizable vulnerability scanner based on simple YAML based DSL"
 					},
-					"fullName": "vulnscanner v2.1.1",
-					"semanticVersion": "v2.1.1",
-					"downloadUri": "file://github.com/projectdiscovery/xxx",
+					"fullName": "Nuclei v2.7.9",
+					"semanticVersion": "v2.7.9",
+					"downloadUri": "https://github.com/projectdiscovery/nuclei/releases",
 					"rules": [
 						{
-							"id": "template1",
-							"name": "SQL Injection CVE-2022-xx",
-							"shortDescription": {
-								"text": "SQL Injection Vulnerability due to Dependency"
-							},
-							"fullDescription": {
-								"text": "Full Description of Vulnerability with references"
-							},
-							"properties": {
-								"Severity Rating": "10",
-								"payload": "'sleep(10)--"
-							}
+							"id": "dvwa-headless-automatic-login",
+							"name": "[high] DVWA Headless Automatic Login",
+							"messageStrings": {}
 						}
 					]
 				}
 			},
 			"results": [
 				{
-					"ruleId": "template1",
+					"message": {"text": "[Nuclei] Default Login"},
+					"ruleId": "dvwa-headless-automatic-login",
 					"rule": {
-						"id": "template1",
-						"toolComponent": {
-							"name": "SQL Injection in xxx"
-						}
+						"id": "dvwa-headless-automatic-login",
+						"toolComponent": {}
 					},
 					"level": "error",
 					"kind": "open",
-					"message": {
-						"text": "SQL Injection"
-					},
-					"analysisTarget": {
-						"uri": "file://projectdiscovery.io"
-					},
+					"analysisTarget": {},
 					"webRequest": {
+						"target": "http://localhost:80/",
 						"body": {}
 					},
 					"webResponse": {
-						"body": {}
+						"body": {
+							"text": "\u003chtml xmlns=\"http://www.w3.org/1999/xhtml\"\u003e\u003chead\u003e\n\t\t\u003cmeta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"\u003e\n\n\t\t\u003ctitle\u003eSetup :: Damn Vulnerable Web Application (DVWA) v1.10 *Development*\u003c/title\u003e\n\n\t\t\u003clink rel=\"stylesheet\" type=\"text/css\" href=\"dvwa/css/main.css\"\u003e\n\n\t\t\u003clink rel=\"icon\" type=\"\\image/ico\" href=\"favicon.ico\"\u003e\n\n\t\t\u003cscript type=\"text/javascript\" src=\"dvwa/js/dvwaPage.js\"\u003e\u003c/script\u003e\n\n\t\u003c/head\u003e\n\n\t\u003cbody class=\"home\"\u003e\n\t\t\u003cdiv id=\"container\"\u003e\n\n\t\t\t\u003cdiv id=\"header\"\u003e\n\n\t\t\t\t\u003cimg src=\"dvwa/images/logo.png\" alt=\"Damn Vulnerable Web Application\"\u003e\n\n\t\t\t\u003c/div\u003e\n\n\t\t\t\u003cdiv id=\"main_menu\"\u003e\n\n\t\t\t\t\u003cdiv id=\"main_menu_padded\"\u003e\n\t\t\t\t\u003cul class=\"menuBlocks\"\u003e\u003cli class=\"selected\"\u003e\u003ca href=\"setup.php\"\u003eSetup DVWA\u003c/a\u003e\u003c/li\u003e\n\u003cli class=\"\"\u003e\u003ca href=\"instructions.php\"\u003eInstructions\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\u003cul class=\"menuBlocks\"\u003e\u003cli class=\"\"\u003e\u003ca href=\"about.php\"\u003eAbout\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\t\t\t\t\u003c/div\u003e\n\n\t\t\t\u003c/div\u003e\n\n\t\t\t\u003cdiv id=\"main_body\"\u003e\n\n\t\t\t\t\n\u003cdiv class=\"body_padded\"\u003e\n\t\u003ch1\u003eDatabase Setup \u003cimg src=\"dvwa/images/spanner.png\"\u003e\u003c/h1\u003e\n\n\t\u003cp\u003eClick on the 'Create / Reset Database' button below to create or reset your database.\u003cbr\u003e\n\tIf you get an error make sure you have the correct user credentials in: \u003cem\u003e/var/www/html/config/config.inc.php\u003c/em\u003e\u003c/p\u003e\n\n\t\u003cp\u003eIf the database already exists, \u003cem\u003eit will be cleared and the data will be reset\u003c/em\u003e.\u003cbr\u003e\n\tYou can also use this to reset the administrator credentials (\"\u003cem\u003eadmin\u003c/em\u003e // \u003cem\u003epassword\u003c/em\u003e\") at any stage.\u003c/p\u003e\n\t\u003chr\u003e\n\t\u003cbr\u003e\n\n\t\u003ch2\u003eSetup Check\u003c/h2\u003e\n\n\tOperating system: \u003cem\u003e*nix\u003c/em\u003e\u003cbr\u003e\n\tBackend database: \u003cem\u003eMySQL\u003c/em\u003e\u003cbr\u003e\n\tPHP version: \u003cem\u003e7.0.30-0+deb9u1\u003c/em\u003e\u003cbr\u003e\n\t\u003cbr\u003e\n\tWeb Server SERVER_NAME: \u003cem\u003elocalhost\u003c/em\u003e\u003cbr\u003e\n\t\u003cbr\u003e\n\tPHP function display_errors: \u003cem\u003eDisabled\u003c/em\u003e\u003cbr\u003e\n\tPHP function safe_mode: \u003cspan class=\"success\"\u003eDisabled\u003c/span\u003e\u003cbr\u003e\n\tPHP function allow_url_include: \u003cspan class=\"failure\"\u003eDisabled\u003c/span\u003e\u003cbr\u003e\n\tPHP function allow_url_fopen: \u003cspan class=\"success\"\u003eEnabled\u003c/span\u003e\u003cbr\u003e\n\tPHP function magic_quotes_gpc: \u003cspan class=\"success\"\u003eDisabled\u003c/span\u003e\u003cbr\u003e\n\tPHP module gd: \u003cspan class=\"success\"\u003eInstalled\u003c/span\u003e\u003cbr\u003e\n\tPHP module mysql: \u003cspan class=\"success\"\u003eInstalled\u003c/span\u003e\u003cbr\u003e\n\tPHP module pdo_mysql: \u003cspan class=\"success\"\u003eInstalled\u003c/span\u003e\u003cbr\u003e\n\t\u003cbr\u003e\n\tMySQL username: \u003cem\u003eapp\u003c/em\u003e\u003cbr\u003e\n\tMySQL password: \u003cem\u003e******\u003c/em\u003e\u003cbr\u003e\n\tMySQL database: \u003cem\u003edvwa\u003c/em\u003e\u003cbr\u003e\n\tMySQL host: \u003cem\u003e127.0.0.1\u003c/em\u003e\u003cbr\u003e\n\t\u003cbr\u003e\n\treCAPTCHA key: \u003cspan class=\"failure\"\u003eMissing\u003c/span\u003e\u003cbr\u003e\n\t\u003cbr\u003e\n\t[User: www-data] Writable folder /var/www/html/hackable/uploads/: \u003cspan class=\"success\"\u003eYes\u003c/span\u003e\u003cbr\u003e\n\t[User: www-data] Writable file /var/www/html/external/phpids/0.6/lib/IDS/tmp/phpids_log.txt: \u003cspan class=\"success\"\u003eYes\u003c/span\u003e\u003cbr\u003e\n\t\u003cbr\u003e\n\t\u003cbr\u003e\n\t[User: www-data] Writable folder /var/www/html/config: \u003cspan class=\"success\"\u003eYes\u003c/span\u003e\n\t\u003cbr\u003e\n\t\u003ci\u003e\u003cspan class=\"failure\"\u003eStatus in red\u003c/span\u003e, indicate there will be an issue when trying to complete some modules.\u003c/i\u003e\u003cbr\u003e\n\t\u003cbr\u003e\n\tIf you see disabled on either \u003ci\u003eallow_url_fopen\u003c/i\u003e or \u003ci\u003eallow_url_include\u003c/i\u003e, set the following in your php.ini file and restart Apache.\u003cbr\u003e\n\t\u003cpre\u003e\u003ccode\u003eallow_url_fopen = On\nallow_url_include = On\u003c/code\u003e\u003c/pre\u003e\n\tThese are only required for the file inclusion labs so unless you want to play with those, you can ignore them.\n\n\t\u003cbr\u003e\u003cbr\u003e\u003cbr\u003e\n\n\t\u003c!-- Create db button --\u003e\n\t\u003cform action=\"#\" method=\"post\"\u003e\n\t\t\u003cinput name=\"create_db\" type=\"submit\" value=\"Create / Reset Database\"\u003e\n\t\t\u003cinput type=\"hidden\" name=\"user_token\" value=\"322998cac30fb2e47fbe75095d03d1f4\"\u003e\n\t\u003c/form\u003e\n\t\u003cbr\u003e\n\t\u003chr\u003e\n\u003c/div\u003e\n\t\t\t\t\u003cbr\u003e\u003cbr\u003e\n\t\t\t\t\u003cdiv class=\"body_padded\"\u003e\u003cdiv class=\"message\"\u003eFirst time using DVWA.\u003cbr\u003eNeed to run 'setup.php'.\u003c/div\u003e\u003c/div\u003e\n\n\t\t\t\u003c/div\u003e\n\n\t\t\t\u003cdiv class=\"clear\"\u003e\n\t\t\t\u003c/div\u003e\n\n\t\t\t\u003cdiv id=\"system_info\"\u003e\n\t\t\t\t\n\t\t\t\u003c/div\u003e\n\n\t\t\t\u003cdiv id=\"footer\"\u003e\n\n\t\t\t\t\u003cp\u003eDamn Vulnerable Web Application (DVWA) v1.10 *Development*\u003c/p\u003e\n\t\t\t\t\u003cscript src=\"/dvwa/js/add_event_listeners.js\"\u003e\u003c/script\u003e\n\n\t\t\t\u003c/div\u003e\n\n\t\t\u003c/div\u003e\n\n\t\n\n\u003c/body\u003e\u003c/html\u003e"
+						}
 					},
 					"locations": [
 						{
-							"message": {
-								"text": "status.projectdiscovery.io"
-							},
+							"message": {"text":"status.projectdiscovery.io"},
 							"physicalLocation": {
-								"address": {
-									"kind": "parameter",
-									"name": "Address of Location",
-									"fullyQualifiedName": "Name of Address"
-								},
+								"address": {},
 								"artifactLocation": {
-									"uri": "//projectdiscovery.com/api/user=admin'",
-									"description": {
-										"text": "file://projectdiscovery.com/api/user=admin'"
-									}
+									"uri": "//localhost:80/"
 								}
 							}
 						}
@@ -82,27 +61,27 @@
 			],
 			"invocations": [
 				{
-					"commandLine": "vulnscanner",
+					"commandLine": "./nuclei",
 					"arguments": [
-						"-sC",
-						"-sV"
+						"-u",
+						"http://localhost:80/",
+						"-headless",
+						"-t",
+						"/Users/tarun/nuclei-templates/headless/dvwa-headless-automatic-login.yaml",
+						"-se",
+						"high.sarif"
 					],
 					"responseFiles": [
 						{
-							"uri": "file:///var/log/xxx.log",
+							"uri": "file://high.sarif",
 							"description": {
-								"text": "Generated using vulnscanner"
+								"text": "Nuclei Sarif Report"
 							}
 						}
 					],
-					"executionSuccessful": true,
+					"executionSuccessful": false,
 					"executableLocation": {},
-					"workingDirectory": {
-						"uri": "file:///opt"
-					},
-					"environmentVariables": {
-						"GOPROXY": "direct"
-					},
+					"workingDirectory": {},
 					"stdin": {},
 					"stdout": {},
 					"stderr": {}
