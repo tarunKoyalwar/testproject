@@ -26,10 +26,10 @@
 							}
 						},
 						{
-							"id": "robots-txt-endpoint",
-							"name": "robots.txt endpoint prober",
+							"id": "exposed-gitignore",
+							"name": "Exposed Gitignore",
 							"fullDescription": {
-								"text": "More details at\nhttps://github.com/projectdiscovery/nuclei-templates/blob/master/miscellaneous/robots-txt-endpoint.yaml\n"
+								"text": "More details at\nhttps://github.com/projectdiscovery/nuclei-templates/blob/master/exposures/configs/exposed-gitignore.yaml\n"
 							}
 						},
 						{
@@ -43,13 +43,6 @@
 							}
 						},
 						{
-							"id": "exposed-gitignore",
-							"name": "Exposed Gitignore",
-							"fullDescription": {
-								"text": "More details at\nhttps://github.com/projectdiscovery/nuclei-templates/blob/master/exposures/configs/exposed-gitignore.yaml\n"
-							}
-						},
-						{
 							"id": "readme-md",
 							"name": "README.md file disclosure",
 							"shortDescription": {
@@ -57,6 +50,13 @@
 							},
 							"fullDescription": {
 								"text": "More details at\nhttps://github.com/projectdiscovery/nuclei-templates/blob/master/exposures/files/readme-md.yaml\n"
+							}
+						},
+						{
+							"id": "robots-txt-endpoint",
+							"name": "robots.txt endpoint prober",
+							"fullDescription": {
+								"text": "More details at\nhttps://github.com/projectdiscovery/nuclei-templates/blob/master/miscellaneous/robots-txt-endpoint.yaml\n"
 							}
 						}
 					]
@@ -66,7 +66,6 @@
 				{
 					"ruleId": "tech-detect",
 					"rule": {
-						"id": "tech-detect",
 						"toolComponent": {}
 					},
 					"level": "none",
@@ -101,86 +100,9 @@
 					]
 				},
 				{
-					"ruleId": "robots-txt-endpoint",
+					"ruleId": "exposed-gitignore",
 					"ruleIndex": 1,
 					"rule": {
-						"id": "robots-txt-endpoint",
-						"toolComponent": {}
-					},
-					"level": "none",
-					"kind": "open",
-					"message": {
-						"text": "[Nuclei:info] robots.txt endpoint prober"
-					},
-					"analysisTarget": {},
-					"webRequest": {
-						"target": "http://localhost:80/",
-						"body": {}
-					},
-					"webResponse": {
-						"version": "xxx",
-						"body": {}
-					},
-					"locations": [
-						{
-							"message": {
-								"text": "http://localhost:80/"
-							},
-							"physicalLocation": {
-								"address": {},
-								"artifactLocation": {
-									"uri": "/",
-									"description": {
-										"text": "http:/localhost:80"
-									}
-								}
-							}
-						}
-					]
-				},
-				{
-					"ruleId": "waf-detect",
-					"ruleIndex": 2,
-					"rule": {
-						"id": "waf-detect",
-						"toolComponent": {}
-					},
-					"level": "none",
-					"kind": "open",
-					"message": {
-						"text": "[Nuclei:info] WAF Detection"
-					},
-					"analysisTarget": {},
-					"webRequest": {
-						"target": "http://localhost:80/",
-						"body": {}
-					},
-					"webResponse": {
-						"version": "xxx",
-						"body": {}
-					},
-					"locations": [
-						{
-							"message": {
-								"text": "http://localhost:80/"
-							},
-							"physicalLocation": {
-								"address": {},
-								"artifactLocation": {
-									"uri": "/",
-									"description": {
-										"text": "http:/localhost:80"
-									}
-								}
-							}
-						}
-					]
-				},
-				{
-					"ruleId": "exposed-gitignore",
-					"ruleIndex": 3,
-					"rule": {
-						"id": "exposed-gitignore",
 						"toolComponent": {}
 					},
 					"level": "none",
@@ -215,10 +137,46 @@
 					]
 				},
 				{
-					"ruleId": "readme-md",
-					"ruleIndex": 4,
+					"ruleId": "waf-detect",
+					"ruleIndex": 2,
 					"rule": {
-						"id": "readme-md",
+						"toolComponent": {}
+					},
+					"level": "none",
+					"kind": "open",
+					"message": {
+						"text": "[Nuclei:info] WAF Detection"
+					},
+					"analysisTarget": {},
+					"webRequest": {
+						"target": "http://localhost:80/",
+						"body": {}
+					},
+					"webResponse": {
+						"version": "xxx",
+						"body": {}
+					},
+					"locations": [
+						{
+							"message": {
+								"text": "http://localhost:80/"
+							},
+							"physicalLocation": {
+								"address": {},
+								"artifactLocation": {
+									"uri": "/",
+									"description": {
+										"text": "http:/localhost:80"
+									}
+								}
+							}
+						}
+					]
+				},
+				{
+					"ruleId": "readme-md",
+					"ruleIndex": 3,
+					"rule": {
 						"toolComponent": {}
 					},
 					"level": "none",
@@ -251,11 +209,48 @@
 							}
 						}
 					]
+				},
+				{
+					"ruleId": "robots-txt-endpoint",
+					"ruleIndex": 4,
+					"rule": {
+						"toolComponent": {}
+					},
+					"level": "none",
+					"kind": "open",
+					"message": {
+						"text": "[Nuclei:info] robots.txt endpoint prober"
+					},
+					"analysisTarget": {},
+					"webRequest": {
+						"target": "http://localhost:80/",
+						"body": {}
+					},
+					"webResponse": {
+						"version": "xxx",
+						"body": {}
+					},
+					"locations": [
+						{
+							"message": {
+								"text": "http://localhost:80/"
+							},
+							"physicalLocation": {
+								"address": {},
+								"artifactLocation": {
+									"uri": "/",
+									"description": {
+										"text": "http:/localhost:80"
+									}
+								}
+							}
+						}
+					]
 				}
 			],
 			"invocations": [
 				{
-					"commandLine": "/var/folders/fs/50l_djns0db4w30ttbd6czgr0000gn/T/go-build2552385730/b001/exe/nuclei",
+					"commandLine": "/var/folders/fs/50l_djns0db4w30ttbd6czgr0000gn/T/go-build4239021647/b001/exe/nuclei",
 					"arguments": [
 						"-u",
 						"http://localhost:80/",
