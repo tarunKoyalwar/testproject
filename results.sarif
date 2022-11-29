@@ -33,6 +33,13 @@
 							}
 						},
 						{
+							"id": "robots-txt-endpoint",
+							"name": "robots.txt endpoint prober",
+							"fullDescription": {
+								"text": "More details at\nhttps://github.com/projectdiscovery/nuclei-templates/blob/master/miscellaneous/robots-txt-endpoint.yaml\n"
+							}
+						},
+						{
 							"id": "waf-detect",
 							"name": "WAF Detection",
 							"shortDescription": {
@@ -50,13 +57,6 @@
 							},
 							"fullDescription": {
 								"text": "More details at\nhttps://github.com/projectdiscovery/nuclei-templates/blob/master/exposures/files/readme-md.yaml\n"
-							}
-						},
-						{
-							"id": "robots-txt-endpoint",
-							"name": "robots.txt endpoint prober",
-							"fullDescription": {
-								"text": "More details at\nhttps://github.com/projectdiscovery/nuclei-templates/blob/master/miscellaneous/robots-txt-endpoint.yaml\n"
 							}
 						}
 					]
@@ -103,6 +103,7 @@
 					"ruleId": "exposed-gitignore",
 					"ruleIndex": 1,
 					"rule": {
+						"index": 1,
 						"toolComponent": {}
 					},
 					"level": "none",
@@ -137,9 +138,48 @@
 					]
 				},
 				{
-					"ruleId": "waf-detect",
+					"ruleId": "robots-txt-endpoint",
 					"ruleIndex": 2,
 					"rule": {
+						"index": 2,
+						"toolComponent": {}
+					},
+					"level": "none",
+					"kind": "open",
+					"message": {
+						"text": "[Nuclei:info] robots.txt endpoint prober"
+					},
+					"analysisTarget": {},
+					"webRequest": {
+						"target": "http://localhost:80/",
+						"body": {}
+					},
+					"webResponse": {
+						"version": "xxx",
+						"body": {}
+					},
+					"locations": [
+						{
+							"message": {
+								"text": "http://localhost:80/"
+							},
+							"physicalLocation": {
+								"address": {},
+								"artifactLocation": {
+									"uri": "/",
+									"description": {
+										"text": "http:/localhost:80"
+									}
+								}
+							}
+						}
+					]
+				},
+				{
+					"ruleId": "waf-detect",
+					"ruleIndex": 3,
+					"rule": {
+						"index": 3,
 						"toolComponent": {}
 					},
 					"level": "none",
@@ -175,8 +215,9 @@
 				},
 				{
 					"ruleId": "readme-md",
-					"ruleIndex": 3,
+					"ruleIndex": 4,
 					"rule": {
+						"index": 4,
 						"toolComponent": {}
 					},
 					"level": "none",
@@ -209,48 +250,11 @@
 							}
 						}
 					]
-				},
-				{
-					"ruleId": "robots-txt-endpoint",
-					"ruleIndex": 4,
-					"rule": {
-						"toolComponent": {}
-					},
-					"level": "none",
-					"kind": "open",
-					"message": {
-						"text": "[Nuclei:info] robots.txt endpoint prober"
-					},
-					"analysisTarget": {},
-					"webRequest": {
-						"target": "http://localhost:80/",
-						"body": {}
-					},
-					"webResponse": {
-						"version": "xxx",
-						"body": {}
-					},
-					"locations": [
-						{
-							"message": {
-								"text": "http://localhost:80/"
-							},
-							"physicalLocation": {
-								"address": {},
-								"artifactLocation": {
-									"uri": "/",
-									"description": {
-										"text": "http:/localhost:80"
-									}
-								}
-							}
-						}
-					]
 				}
 			],
 			"invocations": [
 				{
-					"commandLine": "/var/folders/fs/50l_djns0db4w30ttbd6czgr0000gn/T/go-build4239021647/b001/exe/nuclei",
+					"commandLine": "/var/folders/fs/50l_djns0db4w30ttbd6czgr0000gn/T/go-build1826624673/b001/exe/nuclei",
 					"arguments": [
 						"-u",
 						"http://localhost:80/",
