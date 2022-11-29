@@ -1,6 +1,6 @@
 {
 	"version": "2.1.0",
-	"$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+	"$schema": "file://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
 	"runs": [
 		{
 			"tool": {
@@ -16,7 +16,7 @@
 					},
 					"fullName": "vulnscanner v2.1.1",
 					"semanticVersion": "v2.1.1",
-					"downloadUri": "https://github.com/projectdiscovery/xxx",
+					"downloadUri": "file://github.com/projectdiscovery/xxx",
 					"rules": [
 						{
 							"id": "template1",
@@ -50,7 +50,7 @@
 						"text": "SQL Injection"
 					},
 					"analysisTarget": {
-						"uri": "https://projectdiscovery.io"
+						"uri": "file://projectdiscovery.io"
 					},
 					"webRequest": {
 						"body": {}
@@ -70,9 +70,9 @@
 									"fullyQualifiedName": "Name of Address"
 								},
 								"artifactLocation": {
-									"uri": "https://projectdiscovery.com/api/user=admin'",
+									"uri": "file://projectdiscovery.com/api/user=admin'",
 									"description": {
-										"text": "https://projectdiscovery.com/api/user=admin'"
+										"text": "file://projectdiscovery.com/api/user=admin'"
 									}
 								}
 							}
